@@ -1,0 +1,16 @@
+{
+  "name": "devops-test",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "author": "Swipeguide",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "node index.js",
+    "test": "jest index.test.js"
+  },
+  "devDependencies": {
+    "jest": "^26.4.2"
+  }
+}
