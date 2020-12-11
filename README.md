@@ -23,7 +23,7 @@ You can use:
 - Pipeline must fail if any of the stages fail.
 - Deploy to a target environment when the pipeline is successful.
 - Target environment should consist of:
-  - A load-balancer accessible via HTTPS on port 443. Use Let's Encrypt SSL certificates and pass [SSL Labs](https://www.ssllabs.com) [Server Test](https://www.ssllabs.com/ssltest/) with at least `A` grade.
+  - A load-balancer accessible via HTTPS on port 443.
   - Two application servers (this repository) accessible via HTTP on port 3000.
 
 ## Context
