@@ -12,8 +12,8 @@ You can use:
 
 # App Requirements
 
-- The app purpose is to convert a roman numeral to a number.
-- For the sake of simplicity, the roman numeral is passed as a query parameter, example `http://localhost:3000/?roman=MCMLIV`. The app is already built to handle work this way, all you need to do is to complete the `romanNumeralTranslator` function.
+- Your app should contain a function that takes a string of roman numerals as input and converts it into an integer. Don't remember roman numerals? Check the rules here: https://www.mathsisfun.com/roman-numerals.html
+- For the sake of simplicity, the roman numeral is passed as a query parameter, example `http://localhost:3000/?roman=MCMLIV`. The app is already built to handle work this way. All you need to do is to complete the `romanNumeralTranslator` function.
 - The application server should return the response: `Hi there! I'm being served from {hostname}. The result of MCMLIV conversion is 1954`
 
 # CI Pipeline Requirements
