@@ -10,12 +10,24 @@ const romanNumeralTranslator = (str) => {
 };
 
 const handleRequest = (req, res) => {
-  const { roman } = url.parse(req.url, true).query;
-  res.write(`Hi there! I'm being served from ${os.hostname()} \n\n`);
-  res.write(
-    `The result of ${roman} conversion is ${romanNumeralTranslator(roman)}`
-  );
-  res.end();
+  try {
+    const { roman } = url.parse(req.url, true).query;
+    res.write(`Hi there! I'm being served from ${os.hostname()} \n\n`);
+    
+      if (typeof roman !== 'string') {
+        res.write('You should pass a string query parameter');
+      }
+    
+    res.write(
+      `The result of ${roman} conversion is ${romanNumeralTranslator(roman)}`
+    );
+  
+      
+  } catch (error) {
+    res.write(`${error}`);
+  }finally{
+    res.end();
+  }
 };
 
 http.createServer(handleRequest).listen(3000);
