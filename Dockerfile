@@ -6,7 +6,7 @@ WORKDIR /usr/src/app
 # Bundle app source
 COPY . .
 RUN yarn
-EXPOSE 6000
+EXPOSE 3000
 
 ENTRYPOINT [ "yarn" ]
 CMD [ "start" ]
