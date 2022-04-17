@@ -22,7 +22,8 @@ const romanNumeralTranslator = (str) => {
   // code goes here
   let result = 0;
   let splitedArr = str.split("");
-  for (let i = 0; i < splitedArr.length; i++) {
+  let length = splitedArr.length
+  for (let i = 0; i < length; i++) {
     if (
       i < splitedArr.length - 1 &&
       DIGIT_VALUES[splitedArr[i]] < DIGIT_VALUES[splitedArr[i + 1]]
