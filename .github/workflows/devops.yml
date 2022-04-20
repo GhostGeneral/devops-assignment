@@ -70,4 +70,22 @@ jobs:
         env:
           IMAGE_NAME: ${{ steps.build-image.outputs.image }}
         run: |
-          docker push $IMAGE_NAME    
+          docker push $IMAGE_NAME  
+      - name: Render Amazon ECS task definition
+        id: render-web-container
+        if: github.ref == 'refs/heads/main'
+        uses: aws-actions/amazon-ecs-render-task-definition@v1
+        with:
+          task-definition: task-definition.json
+          container-name: web-server
+          image: ${{ steps.build-image.outputs.image }}
+          environment-variables: "LOG_LEVEL=info"
+
+      - name: Deploy to Amazon ECS service
+        uses: aws-actions/amazon-ecs-deploy-task-definition@v1
+        if: github.ref == 'refs/heads/main'
+        with:
+          task-definition: ${{ steps.render-web-container.outputs.task-definition }}
+          service: roman-numeral-service
+          cluster: roman-numeral-cluster
+          wait-for-service-stability: true
