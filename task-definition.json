@@ -2,6 +2,7 @@
     "requiresCompatibilities": [
     "FARGATE"
     ],
+     "executionRoleArn": "arn:aws:iam::366347281393:role/ecsTaskExecutionRole",
     "inferenceAccelerators": [],
     "containerDefinitions": [
         {
