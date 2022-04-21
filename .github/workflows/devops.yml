@@ -77,7 +77,7 @@ jobs:
         uses: aws-actions/amazon-ecs-render-task-definition@v1
         with:
           task-definition: task-definition.json
-          container-name: development-container
+          container-name: web-server
           image: ${{ steps.build-image.outputs.image }}
           environment-variables: "LOG_LEVEL=info"
 
@@ -86,6 +86,6 @@ jobs:
         if: github.ref == 'refs/heads/main'
         with:
           task-definition: ${{ steps.render-web-container.outputs.task-definition }}
-          service: roman-numeral-service
-          cluster: roman-numeral-cluster
+          service: web-server-service
+          cluster: my-cluster
           wait-for-service-stability: true
