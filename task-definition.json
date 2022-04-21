@@ -34,10 +34,10 @@
     ],
     "volumes": [],
     "networkMode": "awsvpc",
-    "memory": "200",
-    "cpu": "500",
+    "memory": "512",
+    "cpu": "256",
     "placementConstraints": [],
-    "family": "roman-numeral",
+    "family": "first-run-task-definition",
     "tags": []
         
 
